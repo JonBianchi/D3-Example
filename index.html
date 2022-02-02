@@ -19,16 +19,22 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
+
 var x = d3.scaleBand()
     .domain(data.map(function(d) { return d.name; }))
     .rangeRound([margin.left, width - margin.right])
     .padding(0.1);
 
+
+
 var y = d3.scaleLinear()
     .domain([d3.min(series, stackMin), d3.max(series, stackMax)])
     .rangeRound([height - margin.bottom, margin.top]);
 
-var z = d3.scaleOrdinal(d3.schemeCategory10);
+
+// Color hex codes
+var z = d3.scaleOrdinal()
+    .range(["#228C22","#C41F3E"])
 
 
 svg.append("g")
