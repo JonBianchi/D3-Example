@@ -23,7 +23,6 @@ var svg = d3.select("svg"),
 var x = d3.scaleBand()
     .domain(data.map(function(d) { return d.name; }))
     .rangeRound([margin.left, width - margin.right])
-    .padding(0.1);
 
 
 
