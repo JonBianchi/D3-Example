@@ -14,11 +14,28 @@ d3.json("https://raw.githubusercontent.com/JonBianchi/D3-Example/main/data/data.
   .entries(data);
   console.log(playersByQuarter)
 
-console.log(data)
+
+  var groupData = d3.nest()
+    .key(function(d) { return d.name + d.quarter; })
+  	.rollup(function(d, i){
+      
+      var d2 = {Name: d[0].name, Quarter: d[0].quarter}
+      d.forEach(function(d){
+        d2["Series1"] = d.Series1
+        d2["Series2"] = d.Series2
+      })
+      console.log("rollup d", d, d2);
+    	return d2;
+    })
+    .entries(data)
+  	.map(function(d){ return d.value; });
+
+
+//console.log(data)
 var series = d3.stack()
-    .keys("Quarter")
+    .keys(["Series1","Series2"])
     .offset(d3.stackOffsetDiverging)
-    (data);
+    (groupData);
 
 var svg = d3.select("svg"),
     margin = {top: 20, right: 30, bottom: 30, left: 60},
@@ -26,9 +43,18 @@ var svg = d3.select("svg"),
     height = +svg.attr("height");
 
 
-var x = d3.scaleBand()
-    .domain(data.map(function(d) { return d.name; }))
-    .rangeRound([margin.left, width - margin.right])
+    var x0 = d3.scaleBand()
+    .rangeRound([0, width])
+    .paddingInner(0.1);
+
+    var x1 = d3.scaleBand()
+    .padding(0.05);
+
+
+    x0.domain(data.map(function(d) { return d.quarter; }));
+    x1.domain(data.map(function(d) { return d.name; }))
+    .rangeRound([0, x0.bandwidth()])
+  	.padding(0.2);
 
 
 

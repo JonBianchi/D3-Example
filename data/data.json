@@ -1,72 +1,48 @@
 [{
     "quarter" : "Q1",
     "name": "A",
-    "Series1": 30,
-    "Series2": -20
+    "series": "Series1",
+    "value": 20
+},
+{
+    "quarter" : "Q1",
+    "name": "A",
+    "series": "Series2",
+    "value": -50
 },
 {
     "quarter" : "Q1",
     "name": "B",
-    "Series1": 20,
-    "Series2": -15
+    "series": "Series1",
+    "value": 25
 },
 {
     "quarter" : "Q1",
-    "name": "C",
-    "Series1": 30,
-    "Series2": -25
+    "name": "B",
+    "series": "Series2",
+    "value": -40
 },
 {
     "quarter" : "Q2",
     "name": "A",
-    "Series1": 30,
-    "Series2": -20
+    "series": "Series1",
+    "value": 30
+},
+{
+    "quarter" : "Q2",
+    "name": "A",
+    "series": "Series2",
+    "value": -25
 },
 {
     "quarter" : "Q2",
     "name": "B",
-    "Series1": 20,
-    "Series2": -15
+    "series": "Series1",
+    "value": 15
 },
 {
     "quarter" : "Q2",
-    "name": "C",
-    "Series1": 30,
-    "Series2": -25
-},
-{
-    "quarter" : "Q3",
-    "name": "A",
-    "Series1": 30,
-    "Series2": -20
-},
-{
-    "quarter" : "Q3",
     "name": "B",
-    "Series1": 20,
-    "Series2": -15
-},
-{
-    "quarter" : "Q3",
-    "name": "C",
-    "Series1": 30,
-    "Series2": -25
-},
-{
-    "quarter" : "Q4",
-    "name": "A",
-    "Series1": 30,
-    "Series2": -20
-},
-{
-    "quarter" : "Q4",
-    "name": "B",
-    "Series1": 20,
-    "Series2": -15
-},
-{
-    "quarter" : "Q4",
-    "name": "C",
-    "Series1": 30,
-    "Series2": -25
+    "series": "Series2",
+    "value": -30
 }]
