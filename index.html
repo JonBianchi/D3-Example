@@ -9,8 +9,14 @@
 d3.json("https://raw.githubusercontent.com/JonBianchi/D3-Example/main/data/data.json", function(data) {
 
 
+  var playersByQuarter = d3.nest()
+  .key(function(d) { return d.quarter; })
+  .entries(data);
+  console.log(playersByQuarter)
+
+console.log(data)
 var series = d3.stack()
-    .keys(["Series1", "Series2"])
+    .keys("Quarter")
     .offset(d3.stackOffsetDiverging)
     (data);
 
